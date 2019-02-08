@@ -1,0 +1,10 @@
+Consider candidates are not participating in the voting.
+Enter the no. of voters and candidates.
+Declaring an string array1 to store the name of candidates.
+Declaring an dynamic array to store the number of votes of ith candidates at ith index.
+Store all the votes in string array2.
+Compare element of string array 2 with ith element of string array1 if equal then increase the value by 1 at ith index in dynamic array.
+find the index of maximum value in dynamic array and the same index in string array1 will give us the name of candidate,store the name in temp.
+if in dynamic array any other value equal to max then find the index and find the name at same index in string array1.
+if name comes after temp in dictionary then temp=name
+winner of the election=temp
