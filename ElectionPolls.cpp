@@ -21,19 +21,25 @@ cout<<"__________________________________________________"<<endl;
 for(int i=0;i<c;i++)
     cout<<cand[i]<<endl;
 
-//to vote enter the names any from candidate
-    
+//to vote enter the names any from candidate   
 cout<<"Enter the name of candidates "<<v<<" times randomly to vote them: "<<endl;
 string vote[v];
-for(int i=0;i<v;i++)
+try
 {
-    cin>>vote[i];
-    for(int j=0;j<c;j++)
+    for(int i=0;i<v;i++)
     {
-        if(vote[i]==cand[j])
-           cv[j]++;//inc in votes of candidate
+        cin>>vote[i];
+        int s=0;
+        for(int j=0;j<c;j++)
+        {
+            if(vote[i]==cand[j])
+            {
+               cv[j]++;//inc in votes of candidate
+               s++;
+            }
+            if(s==0)throw -1;
+        }
     }
-}
 int max=0;string temp;
 for(int i=0;i<c;i++)
     {
@@ -54,5 +60,10 @@ for(int i=0;i<c;i++)
     }
 }
 cout<<"Winner of Election is: "<<temp;
+}
+catch(...)
+    {
+    cout<<"Invalid candidate name Please check ";
+    }
 return 0;
 }
